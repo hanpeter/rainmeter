@@ -1,6 +1,8 @@
 # rainmeter
 
 [![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+![GitHub tag](https://img.shields.io/github/tag/hanpeter/rainmeter.svg?logo=github)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/hanpeter/rainmeter.svg?logo=github)
 
 Personal Rainmeter Skins
 
