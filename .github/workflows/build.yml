@@ -1,0 +1,61 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    tags: ["*"] # repo tags are bare semver (0.4.0), NOT v-prefixed
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # needed for the tag-gated release step; harmless otherwise
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - name: Stage package layout
+        run: |
+          mkdir -p build/pkg/Skins/rainmeter
+          cp -R CPU GPU Memory Network @Resources build/pkg/Skins/rainmeter/
+          cat > build/pkg/RMSKIN.ini <<'EOF'
+          [rmskin]
+          Author=Peter Han
+          LoadType=Skin
+          Load=rainmeter\CPU\Combo.ini
+          MinimumRainmeter=4.5.0
+          MinimumWindows=10.0
+          EOF
+      - name: Determine version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "version=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ startsWith(github.ref, 'refs/tags/') }}" = "true" ]; then
+            echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build .rmskin
+        id: builder
+        uses: 2bndy5/rmskin-action@cefb988ebf291b17d3d4dc442d3ac8cb162dde64 # v2.0.4
+        with:
+          path: build/pkg
+          dir-out: build
+          title: rainmeter
+          version: ${{ steps.version.outputs.version }}
+      - name: Publish to release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" "${{ steps.builder.outputs.arc-name }}" \
+            --title "${{ github.ref_name }}" --generate-notes \
+          || gh release upload "${{ github.ref_name }}" "${{ steps.builder.outputs.arc-name }}" --clobber
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
