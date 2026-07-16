@@ -27,7 +27,7 @@ jobs:
           LoadType=Skin
           Load=rainmeter\CPU\Combo.ini
           MinimumRainmeter=4.5.0
-          MinimumWindows=10.0
+          MinimumWindows=10.0.22000
           EOF
       - name: Determine version
         id: version
