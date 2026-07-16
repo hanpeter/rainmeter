@@ -1,12 +1,10 @@
 # rainmeter
 
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![GitHub tag](https://img.shields.io/github/v/tag/hanpeter/rainmeter?logo=github)](https://github.com/hanpeter/rainmeter/tags)
-[![GitHub release](https://img.shields.io/github/v/release/hanpeter/rainmeter?logo=github)](https://github.com/hanpeter/rainmeter/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/hanpeter/rainmeter/total?logo=github)](https://github.com/hanpeter/rainmeter/releases)
-[![Last commit](https://img.shields.io/github/last-commit/hanpeter/rainmeter?logo=github)](https://github.com/hanpeter/rainmeter/commits)
-[![Platform: Windows](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows)](https://www.rainmeter.net)
-[![Rainmeter 4.5+](https://img.shields.io/badge/Rainmeter-4.5%2B-00AEEF)](https://www.rainmeter.net)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![GitHub release](https://img.shields.io/github/v/release/hanpeter/rainmeter?logo=github&style=flat-square)](https://github.com/hanpeter/rainmeter/releases/latest)
+[![Last commit](https://img.shields.io/github/last-commit/hanpeter/rainmeter?logo=github&style=flat-square)](https://github.com/hanpeter/rainmeter/commits)
+[![Platform: Windows](https://img.shields.io/badge/platform-Windows-blue?logo=windows&style=flat-square)](https://www.rainmeter.net)
+[![Rainmeter 4.5+](https://img.shields.io/badge/Rainmeter-4.5%2B-blue?style=flat-square)](https://www.rainmeter.net)
 
 Personal collection of minimalist Rainmeter system-monitor skins for CPU, GPU, memory, and network.
 
