@@ -1,6 +1,6 @@
 # rainmeter
 
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License](https://img.shields.io/github/license/hanpeter/rainmeter)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![GitHub tag](https://img.shields.io/github/v/tag/hanpeter/rainmeter?logo=github)](https://github.com/hanpeter/rainmeter/tags)
 [![GitHub release](https://img.shields.io/github/v/release/hanpeter/rainmeter?logo=github)](https://github.com/hanpeter/rainmeter/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/hanpeter/rainmeter/total?logo=github)](https://github.com/hanpeter/rainmeter/releases)
